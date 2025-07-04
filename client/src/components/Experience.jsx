@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -19,7 +20,7 @@ const experiences = [
   },
   {
     title: "Frontend Developer, Bambhari ",
-    date: "JUL 2024 - AUG 2024",
+    date: "JUL 2023 - AUG 2023",
     description:
       "Developed an admin panel with CRUD operations for a website builder application. Implemented secure login and sign-up features for user authentication. Worked on the frontend and backend of the application.",
     technologies: ["HTML", "CSS", "JavaScript", "React", "MongoDB", "Git", "Git Actions"],
@@ -42,7 +43,14 @@ const experiences = [
 ];
 
 const Experience = () => (
-  <section id="experience" className="py-20 bg-[#e3e7ec] text-gray-900">
+  <motion.section
+    id="experience"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="py-20 bg-[#e3e7ec] text-gray-900"
+  >
     <div className="max-w-3xl mx-auto px-4">
       {/* Section Title */}
       <div className="text-center mb-8">
@@ -83,7 +91,7 @@ const Experience = () => (
         ))}
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default Experience; 

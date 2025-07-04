@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPython, FaNodeJs, FaJs, FaDocker, FaGitAlt, FaGithub, FaLinux, FaReact, FaHtml5, FaCss3Alt, FaPhp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 
 const skillGroups = [
@@ -56,7 +57,14 @@ const skillGroups = [
 ];
 
 const Skills = () => (
-  <section id="skills" className="py-20 bg-[#181824] text-white bg-gradient-to-br from-[#181824] via-[#221a2f] to-[#181824]">
+  <motion.section
+    id="skills"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="py-20 bg-[#181824] text-white bg-gradient-to-br from-[#181824] via-[#221a2f] to-[#181824]"
+  >
     <div className="max-w-5xl mx-auto px-4">
       <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white drop-shadow-lg">Skills</h3>
       <div className="grid md:grid-cols-2 gap-8">
@@ -68,7 +76,7 @@ const Skills = () => (
               {group.skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 px-4 py-1 bg-gradient-to-r from-violet-700/80 to-purple-600/80 text-white rounded-full text-sm font-medium border border-violet-700 shadow-md hover:shadow-violet-600/60 transition cursor-pointer relative group backdrop-blur-md"
+                  className="flex items-center gap-2 px-4 py-1 bg-gradient-to-r from-violet-700/80 to-purple-600/80 text-white rounded-full text-sm font-medium border border-violet-700 shadow-md hover:shadow-violet-600/60 transition relative group backdrop-blur-md"
                 >
                   {skill.icon && <span className="text-lg">{skill.icon}</span>}
                   {skill.name}
@@ -82,7 +90,7 @@ const Skills = () => (
         ))}
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default Skills; 

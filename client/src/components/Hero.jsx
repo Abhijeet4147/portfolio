@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 const Hero = () => (
   <motion.section
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7, ease: "easeOut" }}
-    className="flex flex-col items-center justify-center min-h-[80vh] text-center px-4 bg-[#0a0a0f] relative overflow-hidden"
+    id="home"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="flex flex-col items-center justify-center  h-screen -mt-15 text-center px-4 bg-[#0a0a0f] relative overflow-hidden"
   >
     <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white flex items-center justify-center gap-2 drop-shadow-[0_2px_16px_rgba(168,85,247,0.5)]">
       Hello
