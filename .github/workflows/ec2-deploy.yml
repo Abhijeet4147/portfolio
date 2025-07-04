@@ -23,4 +23,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_IMAGE }}
           docker stop react-portfolio || true
           docker rm react-portfolio || true
-          docker run -d --name react-portfolio -p 80:80 ${{ secrets.DOCKER_IMAGE }}
+          docker run -d --name react-portfolio --restart=always -p 3000:80 ${{ secrets.DOCKER_IMAGE }}
