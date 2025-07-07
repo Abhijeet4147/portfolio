@@ -61,11 +61,22 @@ const Experience = () => (
         <a
           href="/resume.pdf"
           download
+          onClick={() => {
+            if (typeof window.gtag !== 'undefined') {
+              window.gtag('event', 'resume_download', {
+                event_category: 'engagement',
+                event_label: 'Resume Button in Experience',
+              });
+            }
+          }}
           className="inline-flex items-center gap-2 px-6 py-2 bg-[#19212a] text-white rounded-md font-semibold shadow hover:bg-[#223042] transition mb-4"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+          </svg>
           Download Resume
         </a>
+
       </div>
       {/* Timeline */}
       <div className="relative pl-8 ml-2 border-l-2 border-gray-400">

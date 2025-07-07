@@ -16,7 +16,7 @@ const projects = [
     description:
       "Successfully developed a social platform for posting text and images with features such as user authentication, follow/unfollow capabilities, and profile customization, utilizing React, Vite, and MongoDB. Integrated Cloudinary for seamless image uploads and styled the user interface with Daisy UI for an intuitive experience. Added quality checks by SonarQube Cloud. Created automated CI/CD pipelines for build, test and deploy using Jenkins.",
     actions: [
-      { label: "View Code", href: "#", icon: <FaGithub /> },
+      { label: "View Code", href: "https://github.com/Abhijeet4147/zaply", icon: <FaGithub /> },
     ],
     tech: ["React", "Vite", "Daisy UI", "MongoDB", "Cloudinary", "Docker", "git", "GitHub actions", "Kubernetes", "Jenkins", "SonarQube", "EC2"],
   },
@@ -26,19 +26,20 @@ const projects = [
     description:
       "Developed a responsive, user-centric logistics website for East-In Marine Freight using React, HTML, CSS, and JavaScript. The platform features service listings, shipment tracking interfaces, and contact forms, optimized for both desktop and mobile users.",
     actions: [
-      { label: "Live Website", href: "#", icon: <FaExternalLinkAlt /> },
+      { label: "Live Website", href: "https://east-in.com/", icon: <FaExternalLinkAlt /> },
     ],
     tech: ["React", "HTML", "CSS", "JavaScript"],
   },
   {
-    title: "Project Management Application",
+    title: "Portfoli",
     image: project3Img,
     description:
-      "Developed a user-friendly website creation platform with an intuitive drag-and-drop interface. Implemented secure user registration and login functionality, ensuring robust authentication measures. Designed and constructed an admin panel for efficient management of websites, templates, and user data. Additionally, integrated CRUD operations, enabling users to effortlessly create, edit, and delete website content.",
+      "I built and deployed my personal portfolio site using DevOps practices and a modern cloudnative toolchain. The goal was to automate the build and deployment pipeline using GitHub Actions, Docker, and AWS — while ensuring it's scalable, secure (HTTPS), and professional. ",
     actions: [
-      { label: "View Code", href: "#", icon: <FaGithub /> },
+      { label: "View live", href: "https://abhijeet.lol", icon: <FaExternalLinkAlt /> },
+      { label: "View Code", href: "https://github.com/Abhijeet4147/portfolio", icon: <FaGithub /> },
     ],
-    tech: ["HTML", "CSS", "JavaScript", "React", "MongoDB", "GrapeJs"],
+    tech: ["HTML", "CSS", "AWS EC2", "React (Vite) ", "GitHub Actions ", "Docker ", "Nginx", ],
   },
 ];
 
