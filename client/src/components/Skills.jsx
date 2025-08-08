@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPython, FaNodeJs, FaJs, FaDocker, FaGitAlt, FaGithub, FaLinux, FaReact, FaHtml5, FaCss3Alt, FaPhp } from "react-icons/fa";
-import { motion } from "framer-motion";
+
 
 
 const skillGroups = [
@@ -44,7 +44,7 @@ const skillGroups = [
     ],
   },
   {
-    title: "Frontend Development",
+    title: "Frontend Developments",
     skills: [
       { name: "React", icon: <FaReact /> },
       { name: "HTML", icon: <FaHtml5 /> },
