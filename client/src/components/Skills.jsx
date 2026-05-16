@@ -1,7 +1,7 @@
 import React from "react";
-import { FaPython, FaNodeJs, FaJs, FaDocker, FaGitAlt, FaGithub, FaLinux, FaReact, FaHtml5, FaCss3Alt, FaPhp } from "react-icons/fa";
-
-
+import { motion } from "framer-motion";
+import { FaPython, FaNodeJs, FaJs, FaDocker, FaGitAlt, FaGithub, FaLinux, FaReact, FaHtml5, FaCss3Alt, FaAws } from "react-icons/fa";
+import { SiKubernetes, SiTerraform, SiJenkins, SiMongodb, SiNginx, SiAnsible, SiVite, SiJira, SiSonarqube, SiRedhatopenshift, SiArgo, SiOpentelemetry, SiTrivy, SiGrafana } from "react-icons/si";
 
 const skillGroups = [
   {
@@ -11,26 +11,36 @@ const skillGroups = [
       { name: "Node.js", icon: <FaNodeJs /> },
       { name: "JavaScript", icon: <FaJs /> },
       { name: "SQL" },
-      { name: "DSA" },
+      { name: "Bash / Shell" },
     ],
   },
   {
-    title: "DevOps Tools",
+    title: "DevOps & Tools",
     skills: [
-      { name: "Kubernetes" },
+      { name: "Kubernetes", icon: <SiKubernetes /> },
       { name: "Docker", icon: <FaDocker /> },
-      { name: "Terraform" },
-      { name: "Jenkins" },
+      { name: "Terraform", icon: <SiTerraform /> },
+      { name: "Jenkins", icon: <SiJenkins /> },
+      { name: "Ansible", icon: <SiAnsible /> },
       { name: "Git", icon: <FaGitAlt /> },
       { name: "GitHub", icon: <FaGithub /> },
       { name: "CI/CD" },
       { name: "Linux", icon: <FaLinux /> },
-      { name: "Ansible" },
+      { name: "Nginx", icon: <SiNginx /> },
+      { name: "SonarQube", icon: <SiSonarqube /> },
+      { name: "Jira", icon: <SiJira /> },
+      { name: "OpenShift", icon: <SiRedhatopenshift /> },
+      { name: "ArgoCD / GitOps", icon: <SiArgo /> },
+      { name: "OpenTelemetry", icon: <SiOpentelemetry /> },
+      { name: "Trivy", icon: <SiTrivy /> },
+      { name: "Grafana", icon: <SiGrafana /> },
+      { name: "Azure" },
     ],
   },
   {
     title: "AWS Services",
     skills: [
+      { name: "EC2", icon: <FaAws /> },
       { name: "Lambda" },
       { name: "S3" },
       { name: "RDS" },
@@ -41,17 +51,18 @@ const skillGroups = [
       { name: "IAM" },
       { name: "VPC" },
       { name: "CloudFormation" },
+      { name: "CodeCommit" },
     ],
   },
   {
-    title: "Frontend Developments",
+    title: "Frontend Development",
     skills: [
       { name: "React", icon: <FaReact /> },
+      { name: "Vite", icon: <SiVite /> },
       { name: "HTML", icon: <FaHtml5 /> },
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "JavaScript", icon: <FaJs /> },
-      { name: "PHP", icon: <FaPhp /> },
-      { name: "Maven" },
+      { name: "MongoDB", icon: <SiMongodb /> },
     ],
   },
 ];
@@ -63,26 +74,29 @@ const Skills = () => (
     whileInView={{ opacity: 1 }}
     transition={{ duration: 0.5, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}
-    className="py-20 bg-[#181824] text-white bg-gradient-to-br from-[#181824] via-[#221a2f] to-[#181824]"
+    className="py-20 text-white border-t border-white/5"
   >
-    <div className="max-w-5xl mx-auto px-4">
-      <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white drop-shadow-lg">Skills</h3>
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="text-center mb-14">
+        <h3 className="text-3xl md:text-4xl font-bold text-white">Skills</h3>
+        <div className="mx-auto mt-3 w-16 h-1 rounded-full bg-gradient-to-r from-violet-500 to-purple-400" />
+      </div>
       <div className="grid md:grid-cols-2 gap-8">
         {skillGroups.map((group, idx) => (
-          <div key={idx} className="backdrop-blur-md bg-white/10 border border-white/10 rounded-2xl shadow-2xl p-6 flex flex-col relative overflow-hidden">
-            <div className="absolute -inset-1 bg-gradient-to-br from-violet-700/30 via-purple-500/10 to-transparent rounded-2xl blur-2xl opacity-60 pointer-events-none" />
-            <h4 className="text-xl font-semibold mb-4 text-white drop-shadow">{group.title}</h4>
-            <div className="flex flex-wrap gap-2">
+          <div
+            key={idx}
+            className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 flex flex-col relative overflow-hidden hover:border-violet-500/40 transition-colors duration-300"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-br from-violet-700/20 via-purple-500/5 to-transparent rounded-2xl blur-2xl opacity-60 pointer-events-none" />
+            <h4 className="text-xl font-semibold mb-5 text-violet-300">{group.title}</h4>
+            <div className="flex flex-wrap gap-3">
               {group.skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 px-4 py-1 bg-gradient-to-r from-violet-700/80 to-purple-600/80 text-white rounded-full text-sm font-medium border border-violet-700 shadow-md hover:shadow-violet-600/60 transition relative group backdrop-blur-md"
+                  className="flex items-center gap-2 px-4 py-2 bg-white/10 text-gray-200 rounded-full text-sm font-medium border border-white/10 hover:border-violet-500/60 hover:bg-violet-900/30 transition-all duration-200"
                 >
-                  {skill.icon && <span className="text-lg">{skill.icon}</span>}
+                  {skill.icon && <span className="text-violet-400 text-base">{skill.icon}</span>}
                   {skill.name}
-                  <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-[#181824] text-white text-xs rounded px-2 py-1 whitespace-nowrap z-10 shadow-lg border border-violet-700">
-                    {skill.name}
-                  </span>
                 </span>
               ))}
             </div>
@@ -93,4 +107,4 @@ const Skills = () => (
   </motion.section>
 );
 
-export default Skills; 
+export default Skills;
